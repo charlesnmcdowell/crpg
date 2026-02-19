@@ -1,0 +1,42 @@
+{
+	"Goblin Melee": {
+		"name": "Goblin Warrior",
+		"hp": 12,
+		"attack": 13,
+		"ac": 12,
+		"abilities": ["Savage Strike"],
+		"ai_type": "melee",
+		"is_enemy": true,
+		"sprite": "goblin_melee"
+	},
+	"Goblin Archer": {
+		"name": "Goblin Archer",
+		"hp": 10,
+		"attack": 14,
+		"ac": 11,
+		"abilities": ["Aimed Shot"],
+		"ai_type": "ranged",
+		"is_enemy": true,
+		"sprite": "goblin_archer"
+	},
+	"Goblin Leader": {
+		"name": "Goblin Chief",
+		"hp": 20,
+		"attack": 15,
+		"ac": 14,
+		"abilities": ["Command", "War Cry", "Crushing Blow"],
+		"ai_type": "leader",
+		"is_enemy": true,
+		"sprite": "goblin_leader"
+	},
+	"Innkeeper": {
+		"name": "Innkeeper",
+		"hp": 8,
+		"attack": 10,
+		"ac": 10,
+		"abilities": [],
+		"ai_type": "civilian",
+		"is_enemy": false,
+		"sprite": "innkeeper"
+	}
+}

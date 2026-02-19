@@ -1,0 +1,167 @@
+{
+	"Power Attack": {
+		"name": "Power Attack",
+		"description": "A devastating melee attack that deals extra damage.",
+		"type": "damage",
+		"min_value": 8,
+		"max_value": 12,
+		"range": 1,
+		"cooldown": 2
+	},
+	"Intimidate": {
+		"name": "Intimidate",
+		"description": "Frighten an enemy, potentially causing them to flee or cower.",
+		"type": "status",
+		"status": "Stun",
+		"duration": 1,
+		"range": 2,
+		"cooldown": 3
+	},
+	"Shield Bash": {
+		"name": "Shield Bash",
+		"description": "Stun an enemy with a shield strike.",
+		"type": "status",
+		"status": "Stun",
+		"duration": 1,
+		"range": 1,
+		"cooldown": 2
+	},
+	"Aimed Shot": {
+		"name": "Aimed Shot",
+		"description": "A carefully aimed ranged attack with bonus accuracy.",
+		"type": "damage",
+		"min_value": 6,
+		"max_value": 10,
+		"range": 5,
+		"cooldown": 1
+	},
+	"Track": {
+		"name": "Track",
+		"description": "Reveal enemy positions and movement patterns.",
+		"type": "utility",
+		"range": 10,
+		"cooldown": 5
+	},
+	"Quick Draw": {
+		"name": "Quick Draw",
+		"description": "Attack twice in one turn.",
+		"type": "special",
+		"range": 5,
+		"cooldown": 3
+	},
+	"Magic Missile": {
+		"name": "Magic Missile",
+		"description": "Automatic hit magical projectile.",
+		"type": "damage",
+		"min_value": 4,
+		"max_value": 8,
+		"range": 6,
+		"cooldown": 0
+	},
+	"Sleep": {
+		"name": "Sleep",
+		"description": "Put an enemy to sleep for several turns.",
+		"type": "status",
+		"status": "Sleep",
+		"duration": 3,
+		"range": 4,
+		"cooldown": 4
+	},
+	"Shield": {
+		"name": "Shield",
+		"description": "Increase AC temporarily.",
+		"type": "buff",
+		"bonus": 2,
+		"duration": 3,
+		"range": 1,
+		"cooldown": 3
+	},
+	"Heal": {
+		"name": "Heal",
+		"description": "Restore hit points to an ally.",
+		"type": "heal",
+		"min_value": 8,
+		"max_value": 15,
+		"range": 3,
+		"cooldown": 0
+	},
+	"Bless": {
+		"name": "Bless",
+		"description": "Grant a bonus to attack rolls.",
+		"type": "buff",
+		"bonus": 2,
+		"duration": 5,
+		"range": 3,
+		"cooldown": 4
+	},
+	"Cure Disease": {
+		"name": "Cure Disease",
+		"description": "Remove negative status effects.",
+		"type": "cure",
+		"range": 2,
+		"cooldown": 3
+	},
+	"Sneak Attack": {
+		"name": "Sneak Attack",
+		"description": "Deal extra damage when attacking from stealth or flanking.",
+		"type": "damage",
+		"min_value": 6,
+		"max_value": 12,
+		"range": 1,
+		"cooldown": 2
+	},
+	"Backstab": {
+		"name": "Backstab",
+		"description": "Critical hit when attacking from behind.",
+		"type": "damage",
+		"min_value": 10,
+		"max_value": 16,
+		"range": 1,
+		"cooldown": 3
+	},
+	"Poison Blade": {
+		"name": "Poison Blade",
+		"description": "Coat weapon with poison, causing ongoing damage.",
+		"type": "status",
+		"status": "Poison",
+		"duration": 3,
+		"range": 1,
+		"cooldown": 4
+	},
+	"Savage Strike": {
+		"name": "Savage Strike",
+		"description": "Brutal melee attack with chance to cause bleeding.",
+		"type": "damage",
+		"min_value": 5,
+		"max_value": 9,
+		"range": 1,
+		"cooldown": 1
+	},
+	"Command": {
+		"name": "Command",
+		"description": "Rally nearby allies, granting them extra actions.",
+		"type": "buff",
+		"bonus": 1,
+		"duration": 2,
+		"range": 3,
+		"cooldown": 5
+	},
+	"War Cry": {
+		"name": "War Cry",
+		"description": "Intimidating shout that may cause fear in enemies.",
+		"type": "status",
+		"status": "Slow",
+		"duration": 2,
+		"range": 4,
+		"cooldown": 3
+	},
+	"Crushing Blow": {
+		"name": "Crushing Blow",
+		"description": "Powerful attack that ignores armor.",
+		"type": "damage",
+		"min_value": 10,
+		"max_value": 16,
+		"range": 1,
+		"cooldown": 4
+	}
+}

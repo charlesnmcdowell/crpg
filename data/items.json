@@ -1,0 +1,35 @@
+{
+	"Health Potion": {
+		"name": "Health Potion",
+		"type": "consumable",
+		"effect": "heal",
+		"value": 10,
+		"description": "Restores 10 HP."
+	},
+	"Antidote": {
+		"name": "Antidote",
+		"type": "consumable",
+		"effect": "cure",
+		"cures": ["Poison"],
+		"description": "Removes poison effects."
+	},
+	"Smelling Salts": {
+		"name": "Smelling Salts",
+		"type": "consumable",
+		"effect": "cure",
+		"cures": ["Sleep", "Stun"],
+		"description": "Wakes up or revives a stunned ally."
+	},
+	"Iron Sword": {
+		"name": "Iron Sword",
+		"type": "weapon",
+		"attack_bonus": 1,
+		"description": "A sturdy iron blade."
+	},
+	"Leather Armor": {
+		"name": "Leather Armor",
+		"type": "armor",
+		"ac_bonus": 1,
+		"description": "Basic leather protection."
+	}
+}

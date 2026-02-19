@@ -1,0 +1,47 @@
+{
+	"Warrior": {
+		"name": "Warrior",
+		"description": "A strong melee fighter with high HP and attack.",
+		"base_hp": 25,
+		"base_attack": 16,
+		"base_ac": 15,
+		"abilities": ["Power Attack", "Intimidate", "Shield Bash"],
+		"ai_type": "melee"
+	},
+	"Ranger": {
+		"name": "Ranger",
+		"description": "A balanced fighter skilled in both ranged and melee combat.",
+		"base_hp": 20,
+		"base_attack": 14,
+		"base_ac": 13,
+		"abilities": ["Aimed Shot", "Track", "Quick Draw"],
+		"ai_type": "balanced"
+	},
+	"Wizard": {
+		"name": "Wizard",
+		"description": "A spellcaster with powerful magical abilities but low defense.",
+		"base_hp": 15,
+		"base_attack": 12,
+		"base_ac": 11,
+		"abilities": ["Magic Missile", "Sleep", "Shield"],
+		"ai_type": "caster"
+	},
+	"Healer": {
+		"name": "Healer",
+		"description": "A support character focused on healing and buffing allies.",
+		"base_hp": 18,
+		"base_attack": 13,
+		"base_ac": 12,
+		"abilities": ["Heal", "Bless", "Cure Disease"],
+		"ai_type": "healer"
+	},
+	"Rogue": {
+		"name": "Rogue",
+		"description": "A stealthy fighter who strikes from the shadows.",
+		"base_hp": 16,
+		"base_attack": 15,
+		"base_ac": 14,
+		"abilities": ["Sneak Attack", "Backstab", "Poison Blade"],
+		"ai_type": "rogue"
+	}
+}

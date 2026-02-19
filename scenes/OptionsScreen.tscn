@@ -1,0 +1,109 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm5qg38xl7kwl"]
+
+[ext_resource type="Script" path="res://scripts/OptionsScreen.gd" id="1_2vdco"]
+
+[node name="OptionsScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource("1_2vdco")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.1, 0.1, 0.2, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "OPTIONS"
+label_settings = SubResource("LabelSettings_1bv2x")
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeContainer" type="HBoxContainer" parent="VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="VBoxContainer/OptionsContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Master Volume:"
+
+[node name="VolumeSlider" type="HSlider" parent="VBoxContainer/OptionsContainer/VolumeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.01
+value = 0.8
+
+[node name="MusicContainer" type="HBoxContainer" parent="VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer/OptionsContainer/MusicContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Music:"
+
+[node name="MusicCheckBox" type="CheckBox" parent="VBoxContainer/OptionsContainer/MusicContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="SFXContainer" type="HBoxContainer" parent="VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="SFXLabel" type="Label" parent="VBoxContainer/OptionsContainer/SFXContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Sound Effects:"
+
+[node name="SFXCheckBox" type="CheckBox" parent="VBoxContainer/OptionsContainer/SFXContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="UIScaleContainer" type="HBoxContainer" parent="VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="UIScaleLabel" type="Label" parent="VBoxContainer/OptionsContainer/UIScaleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "UI Scale:"
+
+[node name="UIScaleOption" type="OptionButton" parent="VBoxContainer/OptionsContainer/UIScaleContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 1
+item_count = 3
+popup/item_0/text = "Small"
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Large"
+popup/item_2/id = 2
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Back"
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bv2x"]
+font_size = 24
