@@ -29,6 +29,13 @@ func _on_credits_pressed():
 func _on_quit_pressed():
 	get_tree().quit()
 
+# Ensure script parses cleanly in editor when nodes are not yet ready
+func _get_configuration_warnings() -> PackedStringArray:
+	var warnings: PackedStringArray = []
+	if new_game_button == null:
+		warnings.append("NewGameButton not found")
+	return warnings
+
 func _on_settings_changed():
 	apply_ui_scaling()
 
