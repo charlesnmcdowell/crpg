@@ -25,7 +25,8 @@ func _ready():
 	SettingsManager.settings_changed.connect(_on_settings_changed)
 
 func _on_new_game_pressed():
-	GameManager.change_scene("res://scenes/CharacterCreation.tscn")
+	# Zero-risk path: skip character creation and jump straight into the inn
+	GameManager.start_new_game()
 
 func _on_options_pressed():
 	GameManager.change_scene("res://scenes/OptionsScreen.tscn")
