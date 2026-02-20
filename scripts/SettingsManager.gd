@@ -85,9 +85,12 @@ func apply_audio_settings():
 		AudioServer.set_bus_mute(sfx_bus, not settings["sfx_enabled"])
 
 func apply_ui_scale():
-	var scale_value = ui_scale_values[settings["ui_scale"]]
-	get_tree().set_screen_stretch(DisplayServer.SCREEN_STRETCH_MODE_CANVAS_ITEMS, 
-		DisplayServer.SCREEN_STRETCH_ASPECT_KEEP, Vector2i(1280, 720))
+	var scale_value: float = ui_scale_values[settings["ui_scale"]]
+	# Godot 4.2+: use SceneTree content scale APIs (no DisplayServer constants)
+	var tree := get_tree()
+	tree.content_scale_mode = SceneTree.STRETCH_MODE_CANVAS_ITEMS
+	tree.content_scale_aspect = SceneTree.STRETCH_ASPECT_KEEP
+	tree.content_scale_factor = scale_value
 
 func get_setting(key: String):
 	return settings.get(key, null)

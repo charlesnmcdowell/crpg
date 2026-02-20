@@ -8,6 +8,11 @@ All notable changes to this project will be documented in this file.
 - Web export to `docs/` + enable GitHub Pages
 - Basic placeholder tileset and audio
 
+## [0.1.2] - 2026-02-20
+- Zero-risk pass: minimal GameManager with hard-coded Warrior
+- Skip CharacterCreation; TitleScreen → New Game jumps straight to inn
+- Fixed SettingsManager stretch API for Godot 4.2 (SceneTree content_scale*)
+
 ## [0.1.1] - 2026-02-20
 - Fixed node path mismatches across scenes (Title, Options, CharacterCreation, Credits, EndScreen, HUD, GameWorld)
 - Added missing GameWorld children (HUD instance, WaveManager, TileMap, Camera2D)
