@@ -14,13 +14,11 @@ config/name="CRPG Demo"
 run/main_scene="res://scenes/TitleScreen.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
-config/version="0.1-dev"
+config/version="0.1-minimal"
 
 [autoload]
 
 GameManager="*res://scripts/GameManager.gd"
-SettingsManager="*res://scripts/SettingsManager.gd"
-CombatManager="*res://scripts/CombatManager.gd"
 
 [display]
 
