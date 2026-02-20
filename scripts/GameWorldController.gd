@@ -21,25 +21,31 @@ var companions_joined: bool = false
 var unit_scene: PackedScene = preload("res://scenes/Unit.tscn")
 
 func _ready():
+	# Safety: if opened in editor as a subscene, bail out early
+	if not is_inside_tree():
+		return
+	
 	# Connect HUD signals
-	hud.attack_pressed.connect(_on_attack_pressed)
-	hud.ability_pressed.connect(_on_ability_pressed)
-	hud.end_turn_pressed.connect(_on_end_turn_pressed)
-	hud.pause_pressed.connect(_on_pause_pressed)
+	if is_instance_valid(hud):
+		hud.attack_pressed.connect(_on_attack_pressed)
+		hud.ability_pressed.connect(_on_ability_pressed)
+		hud.end_turn_pressed.connect(_on_end_turn_pressed)
+		hud.pause_pressed.connect(_on_pause_pressed)
 	
 	# Connect wave manager signals
-	wave_manager.wave_started.connect(_on_wave_started)
-	wave_manager.wave_cleared.connect(_on_wave_cleared)
-	wave_manager.all_waves_cleared.connect(_on_all_waves_cleared)
+	if is_instance_valid(wave_manager):
+		wave_manager.wave_started.connect(_on_wave_started)
+		wave_manager.wave_cleared.connect(_on_wave_cleared)
+		wave_manager.all_waves_cleared.connect(_on_all_waves_cleared)
 	
 	# Spawn player
 	spawn_player()
-	
 	# Spawn innkeeper in common room
 	spawn_innkeeper()
 	
-	hud.add_combat_log_entry("You enter the inn...")
-	hud.add_combat_log_entry("Explore the rooms. Head to the common room.")
+	if is_instance_valid(hud):
+		hud.add_combat_log_entry("You enter the inn...")
+		hud.add_combat_log_entry("Explore the rooms. Head to the common room.")
 
 func spawn_player():
 	player_unit = unit_scene.instantiate()

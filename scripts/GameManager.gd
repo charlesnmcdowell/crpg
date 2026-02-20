@@ -45,7 +45,7 @@ func load_game_data():
 		abilities_file.close()
 		ability_data = JSON.parse_string(abilities_json)
 
-func create_player_character(class_name: String, player_name: String = ""):
+func create_player_character(class_name: String, player_name: String = "") -> void:
 	if class_name in character_classes:
 		var class_data = character_classes[class_name]
 		player_data = {
