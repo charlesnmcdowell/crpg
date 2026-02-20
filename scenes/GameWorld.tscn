@@ -1,134 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgameworld01"]
+[gd_scene load_steps=3 format=3 uid="uid://gameworld001"]
 
-[ext_resource type="Script" path="res://scripts/GameWorldController.gd" id="1_ctrl"]
-[ext_resource type="PackedScene" uid="uid://dhud0001" path="res://scenes/HUD.tscn" id="2_hud"]
-[ext_resource type="Script" path="res://scripts/WaveManager.gd" id="3_wave"]
+[ext_resource type="Script" path="res://scripts/GameWorldController.gd" id="1_gw"]
+
+[sub_resource type="RectangleShape2D" id="shape_common"]
+size = Vector2(480, 260)
 
 [node name="GameWorld" type="Node2D"]
-script = ExtResource("1_ctrl")
+script = ExtResource("1_gw")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(400, 300)
-zoom = Vector2(1.5, 1.5)
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.12, 0.1, 0.1, 1)
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Rooms" type="Node2D" parent="."]
 
-[node name="InnFloor" type="ColorRect" parent="."]
-offset_left = 50.0
-offset_top = 50.0
-offset_right = 750.0
-offset_bottom = 550.0
-color = Color(0.35, 0.25, 0.15, 1)
+[node name="Bedroom" type="ColorRect" parent="Rooms"]
+position = Vector2(80, 80)
+size = Vector2(200, 140)
+color = Color(0.2, 0.18, 0.16)
 
-[node name="Entrance" type="ColorRect" parent="InnFloor"]
-offset_left = 100.0
-offset_top = 400.0
-offset_right = 250.0
-offset_bottom = 500.0
-color = Color(0.45, 0.35, 0.2, 1)
+[node name="Hall" type="ColorRect" parent="Rooms"]
+position = Vector2(300, 80)
+size = Vector2(120, 320)
+color = Color(0.18, 0.18, 0.2)
 
-[node name="EntranceLabel" type="Label" parent="InnFloor/Entrance"]
-offset_right = 150.0
-offset_bottom = 20.0
-text = "Entrance"
-horizontal_alignment = 1
+[node name="CommonRoom" type="ColorRect" parent="Rooms"]
+position = Vector2(440, 60)
+size = Vector2(480, 260)
+color = Color(0.22, 0.2, 0.16)
 
-[node name="Hall" type="ColorRect" parent="InnFloor"]
-offset_left = 250.0
-offset_top = 200.0
-offset_right = 350.0
-offset_bottom = 500.0
-color = Color(0.4, 0.3, 0.18, 1)
+[node name="Kitchen" type="ColorRect" parent="Rooms"]
+position = Vector2(440, 340)
+size = Vector2(220, 180)
+color = Color(0.2, 0.22, 0.18)
 
-[node name="HallLabel" type="Label" parent="InnFloor/Hall"]
-offset_right = 100.0
-offset_bottom = 20.0
-text = "Hall"
-horizontal_alignment = 1
+[node name="Storage" type="ColorRect" parent="Rooms"]
+position = Vector2(680, 340)
+size = Vector2(240, 180)
+color = Color(0.16, 0.2, 0.22)
 
-[node name="CommonRoom" type="ColorRect" parent="InnFloor"]
-offset_left = 300.0
-offset_top = 50.0
-offset_right = 600.0
-offset_bottom = 300.0
-color = Color(0.5, 0.38, 0.22, 1)
+[node name="Entrance" type="ColorRect" parent="Rooms"]
+position = Vector2(260, 420)
+size = Vector2(160, 100)
+color = Color(0.18, 0.16, 0.2)
 
-[node name="CommonRoomLabel" type="Label" parent="InnFloor/CommonRoom"]
-offset_right = 300.0
-offset_bottom = 20.0
-text = "Common Room"
-horizontal_alignment = 1
+[node name="CommonRoomTrigger" type="Area2D" parent="."]
+position = Vector2(440, 60)
 
-[node name="Kitchen" type="ColorRect" parent="InnFloor"]
-offset_left = 500.0
-offset_top = 300.0
-offset_right = 700.0
-offset_bottom = 500.0
-color = Color(0.42, 0.32, 0.2, 1)
-
-[node name="KitchenLabel" type="Label" parent="InnFloor/Kitchen"]
-offset_right = 200.0
-offset_bottom = 20.0
-text = "Kitchen"
-horizontal_alignment = 1
-
-[node name="Bedroom" type="ColorRect" parent="InnFloor"]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 200.0
-offset_bottom = 200.0
-color = Color(0.38, 0.28, 0.18, 1)
-
-[node name="BedroomLabel" type="Label" parent="InnFloor/Bedroom"]
-offset_right = 200.0
-offset_bottom = 20.0
-text = "Bedroom"
-horizontal_alignment = 1
-
-[node name="Storage" type="ColorRect" parent="InnFloor"]
-offset_left = 0.0
-offset_top = 200.0
-offset_right = 150.0
-offset_bottom = 400.0
-color = Color(0.32, 0.22, 0.14, 1)
-
-[node name="StorageLabel" type="Label" parent="InnFloor/Storage"]
-offset_right = 150.0
-offset_bottom = 20.0
-text = "Storage"
-horizontal_alignment = 1
-
-[node name="Walls" type="Node2D" parent="."]
-
-[node name="TopWall" type="ColorRect" parent="Walls"]
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 760.0
-offset_bottom = 55.0
-color = Color(0.2, 0.15, 0.1, 1)
-
-[node name="BottomWall" type="ColorRect" parent="Walls"]
-offset_left = 40.0
-offset_top = 545.0
-offset_right = 760.0
-offset_bottom = 560.0
-color = Color(0.2, 0.15, 0.1, 1)
-
-[node name="LeftWall" type="ColorRect" parent="Walls"]
-offset_left = 40.0
-offset_top = 40.0
-offset_right = 55.0
-offset_bottom = 560.0
-color = Color(0.2, 0.15, 0.1, 1)
-
-[node name="RightWall" type="ColorRect" parent="Walls"]
-offset_left = 745.0
-offset_top = 40.0
-offset_right = 760.0
-offset_bottom = 560.0
-color = Color(0.2, 0.15, 0.1, 1)
-
-[node name="HUD" parent="." instance=ExtResource("2_hud")]
-
-[node name="WaveManager" type="Node" parent="."]
-script = ExtResource("3_wave")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CommonRoomTrigger"]
+shape = SubResource("shape_common")

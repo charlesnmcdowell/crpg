@@ -1,150 +1,73 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhud0001"]
+[gd_scene load_steps=2 format=3 uid="uid://hud001"]
 
 [ext_resource type="Script" path="res://scripts/HUD.gd" id="1_hud"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
 
-[node name="HUDContainer" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
+[node name="HUDContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
 
 [node name="TopBar" type="HBoxContainer" parent="HUDContainer"]
-layout_mode = 1
-anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 40.0
-alignment = 1
+custom_minimum_size = Vector2(0, 32)
 
 [node name="UnitInfoLabel" type="Label" parent="HUDContainer/TopBar"]
-layout_mode = 2
 size_flags_horizontal = 3
-text = "Select a unit"
+text = "Unit info"
 
 [node name="TurnLabel" type="Label" parent="HUDContainer/TopBar"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Exploration"
-horizontal_alignment = 1
+custom_minimum_size = Vector2(160, 0)
+text = "Turn"
 
 [node name="InventoryBtn" type="Button" parent="HUDContainer/TopBar"]
-layout_mode = 2
-custom_minimum_size = Vector2(90, 0)
 text = "Inventory"
 
 [node name="PauseBtn" type="Button" parent="HUDContainer/TopBar"]
-layout_mode = 2
-custom_minimum_size = Vector2(70, 0)
 text = "Pause"
 
-[node name="ActionBar" type="HBoxContainer" parent="HUDContainer"]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
+[node name="MainRows" type="HBoxContainer" parent="HUDContainer"]
+anchor_top = 0.0
 anchor_bottom = 1.0
-offset_top = -60.0
-alignment = 1
+size_flags_vertical = 3
+
+[node name="CombatLogPanel" type="PanelContainer" parent="HUDContainer/MainRows"]
+custom_minimum_size = Vector2(0, 120)
+size_flags_horizontal = 3
+
+[node name="CombatLog" type="RichTextLabel" parent="HUDContainer/MainRows/CombatLogPanel"]
+bbcode_enabled = true
+scroll_following = true
+
+[node name="InitiativePanel" type="PanelContainer" parent="HUDContainer/MainRows"]
+custom_minimum_size = Vector2(180, 0)
+
+[node name="InitiativeList" type="VBoxContainer" parent="HUDContainer/MainRows/InitiativePanel"]
+
+[node name="ActionBar" type="HBoxContainer" parent="HUDContainer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+custom_minimum_size = Vector2(0, 48)
 
 [node name="AttackBtn" type="Button" parent="HUDContainer/ActionBar"]
-layout_mode = 2
-custom_minimum_size = Vector2(100, 50)
 text = "Attack"
 
 [node name="Ability1Btn" type="Button" parent="HUDContainer/ActionBar"]
-layout_mode = 2
-custom_minimum_size = Vector2(100, 50)
 text = "Ability 1"
 
 [node name="Ability2Btn" type="Button" parent="HUDContainer/ActionBar"]
-layout_mode = 2
-custom_minimum_size = Vector2(100, 50)
 text = "Ability 2"
 
 [node name="Ability3Btn" type="Button" parent="HUDContainer/ActionBar"]
-layout_mode = 2
-custom_minimum_size = Vector2(100, 50)
 text = "Ability 3"
 
 [node name="EndTurnBtn" type="Button" parent="HUDContainer/ActionBar"]
-layout_mode = 2
-custom_minimum_size = Vector2(100, 50)
 text = "End Turn"
 
-[node name="CombatLogPanel" type="PanelContainer" parent="HUDContainer"]
-layout_mode = 1
-anchor_top = 0.6
-anchor_bottom = 0.88
-offset_left = 10.0
-offset_right = 320.0
-
-[node name="CombatLog" type="RichTextLabel" parent="HUDContainer/CombatLogPanel"]
-layout_mode = 2
-scroll_following = true
-text = "Combat Log..."
-
-[node name="InitiativePanel" type="PanelContainer" parent="HUDContainer"]
-layout_mode = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -180.0
-offset_top = 50.0
-offset_right = -10.0
-offset_bottom = 350.0
-
-[node name="VBox" type="VBoxContainer" parent="HUDContainer/InitiativePanel"]
-layout_mode = 2
-
-[node name="InitTitle" type="Label" parent="HUDContainer/InitiativePanel/VBox"]
-layout_mode = 2
-text = "Initiative Order"
-horizontal_alignment = 1
-
-[node name="HSeparator" type="HSeparator" parent="HUDContainer/InitiativePanel/VBox"]
-layout_mode = 2
-
-[node name="InitiativeList" type="VBoxContainer" parent="HUDContainer/InitiativePanel"]
-layout_mode = 2
-offset_top = 30.0
-
-[node name="PauseMenu" type="Control" parent="."]
+[node name="PauseMenu" type="Control" parent="HUDContainer"]
 visible = false
-process_mode = 3
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="Overlay" type="ColorRect" parent="PauseMenu"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color(0, 0, 0, 0.6)
-
-[node name="VBox" type="VBoxContainer" parent="PauseMenu"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -80.0
-offset_right = 100.0
-offset_bottom = 80.0
-
-[node name="PausedLabel" type="Label" parent="PauseMenu/VBox"]
-layout_mode = 2
-text = "PAUSED"
-horizontal_alignment = 1
-
-[node name="ResumeBtn" type="Button" parent="PauseMenu/VBox"]
-layout_mode = 2
-text = "Resume"
-
-[node name="QuitBtn" type="Button" parent="PauseMenu/VBox"]
-layout_mode = 2
-text = "Quit to Menu"
