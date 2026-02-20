@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctyb1p8j6dhxg"]
+[gd_scene load_steps=4 format=3 uid="uid://ctyb1p8j6dhxg"]
 
 [ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_title"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_title"]
 font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_version"]
+font_size = 14
+font_color = Color(1,1,1,0.6)
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -64,3 +68,18 @@ text = "Credits"
 layout_mode = 2
 custom_minimum_size = Vector2(300, 50)
 text = "Quit"
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -28.0
+offset_right = -16.0
+offset_bottom = -8.0
+label_settings = SubResource("LabelSettings_version")
+horizontal_alignment = 2
+text = "v0.1-dev"

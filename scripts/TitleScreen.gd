@@ -4,6 +4,7 @@ extends Control
 @onready var options_button = $VBoxContainer/MenuButtons/OptionsButton
 @onready var credits_button = $VBoxContainer/MenuButtons/CreditsButton
 @onready var quit_button = $VBoxContainer/MenuButtons/QuitButton
+@onready var version_label: Label = $VersionLabel
 
 func _ready():
 	new_game_button.pressed.connect(_on_new_game_pressed)
@@ -13,6 +14,12 @@ func _ready():
 	
 	# Apply UI scaling
 	apply_ui_scaling()
+	
+	# Version label
+	var ver := ProjectSettings.get_setting("application/config/version", "0.0")
+	var date_str := Time.get_datetime_string_from_system(false).substr(0, 10)
+	if version_label:
+		version_label.text = "v%s  •  %s" % [str(ver), date_str]
 	
 	# Connect settings changed signal
 	SettingsManager.settings_changed.connect(_on_settings_changed)
